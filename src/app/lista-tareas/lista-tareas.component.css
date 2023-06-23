@@ -1,0 +1,10 @@
+.container{
+    width: 60%;
+    margin: 0 auto;
+}
+.no-tareas{
+    color: red;
+}
+.example-full-width{
+    width: 100%;
+}

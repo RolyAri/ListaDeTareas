@@ -1,0 +1,23 @@
+<div class="container">
+    <h1>Lista de Tareas</h1>
+
+    <div *ngIf="tasks.length === 0"><h2 class="no-tareas">No hay tareas.</h2> </div>
+
+    <mat-list role="list">
+        <mat-list-item *ngFor="let task of tasks" role="listitem">
+            {{task.nombre}}
+            <button mat-raised-button color="warn" (click)="removeTask(task)"
+                aria-label="Example icon button with a delete icon">
+                Eliminar Tarea
+                <mat-icon>delete</mat-icon>
+            </button>
+        </mat-list-item>
+    </mat-list>
+    <div>
+        <mat-form-field class="example-full-width" appearance="outline">
+            <mat-label>Agregar nueva tarea</mat-label>
+            <input matInput [(ngModel)]="taskName" placeholder="Nueva tarea">
+        </mat-form-field>
+        <button (click)="addTask(taskName)" mat-raised-button color="primary">Agregar tarea</button>
+    </div>
+</div>
